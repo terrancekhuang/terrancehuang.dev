@@ -1,0 +1,71 @@
+import { hero } from '../data/content';
+
+function Hero() {
+  return (
+    <section
+      id="top"
+      className="section-pad"
+      style={{
+        minHeight: '72vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        padding: '40px 0',
+      }}
+    >
+      <h1
+        className="hero-title"
+        style={{
+          fontSize: 88,
+          lineHeight: 1,
+          fontWeight: 600,
+          margin: '0 0 24px',
+          letterSpacing: '-0.03em',
+        }}
+      >
+        {hero.name}
+      </h1>
+      <p
+        style={{
+          fontSize: 19,
+          lineHeight: 1.6,
+          color: 'var(--text-muted)',
+          margin: '0 0 32px',
+          maxWidth: 580,
+        }}
+      >
+        {hero.bio}
+      </p>
+      <div className="hero-actions" style={{ display: 'flex', gap: 12 }}>
+        <a
+          href="#work"
+          style={{
+            background: 'var(--text)',
+            color: 'var(--bg)',
+            padding: '12px 22px',
+            borderRadius: 4,
+            fontWeight: 500,
+            fontSize: 15,
+          }}
+        >
+          View work
+        </a>
+        <a
+          href="#contact"
+          style={{
+            border: '1px solid var(--border)',
+            color: 'var(--text)',
+            padding: '12px 22px',
+            borderRadius: 4,
+            fontWeight: 500,
+            fontSize: 15,
+          }}
+        >
+          Contact
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
