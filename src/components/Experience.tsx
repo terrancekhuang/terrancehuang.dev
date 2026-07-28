@@ -15,10 +15,9 @@ function EntryList({ entries }: { entries: ExperienceEntry[] }) {
       {entries.map((entry) => (
         <div key={`${entry.role}-${entry.org}`}>
           <p style={{ fontWeight: 600, fontSize: 15, margin: 0 }}>{entry.role}</p>
-          <p style={{ fontSize: 14, color: 'var(--text-faint)', margin: '2px 0 8px' }}>
+          <p style={{ fontSize: 14, color: 'var(--text-faint)', margin: '2px 0 0' }}>
             {entry.org} · {entry.dates}
           </p>
-          <p style={{ fontSize: 15, margin: 0, lineHeight: 1.6 }}>{entry.description}</p>
         </div>
       ))}
     </div>

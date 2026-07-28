@@ -25,17 +25,20 @@ function Hero() {
       >
         {hero.name}
       </h1>
-      <p
-        style={{
-          fontSize: 19,
-          lineHeight: 1.6,
-          color: 'var(--text-muted)',
-          margin: '0 0 32px',
-          maxWidth: 580,
-        }}
-      >
-        {hero.bio}
-      </p>
+      {hero.bioParagraphs.map((paragraph, i) => (
+        <p
+          key={paragraph}
+          style={{
+            fontSize: 19,
+            lineHeight: 1.6,
+            color: 'var(--text-muted)',
+            margin: i === hero.bioParagraphs.length - 1 ? '0 0 32px' : '0 0 16px',
+            maxWidth: 580,
+          }}
+        >
+          {paragraph}
+        </p>
+      ))}
       <div className="hero-actions" style={{ display: 'flex', gap: 12 }}>
         <a
           href="#work"
