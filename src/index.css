@@ -53,6 +53,14 @@ main {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
+  .hero-row {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .hero-portrait {
+    max-width: 100%;
+    order: -1;
+  }
   .hero-actions {
     flex-direction: column !important;
     align-items: flex-start !important;
