@@ -16,25 +16,18 @@ function SelectedWork() {
         Selected work
       </h2>
       <article>
-        <div
-          role="img"
-          aria-label={selectedWork.diagramLabel}
+        <img
+          src="/images/bible-tracker-demo.jpg"
+          alt={selectedWork.diagramLabel}
           style={{
             width: '100%',
-            aspectRatio: '16/9',
-            background:
-              'repeating-linear-gradient(135deg, var(--diagram-a), var(--diagram-a) 10px, var(--diagram-b) 10px, var(--diagram-b) 20px)',
+            aspectRatio: '1280 / 800',
+            objectFit: 'cover',
             borderRadius: 6,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            border: '1px solid var(--border)',
             marginBottom: 24,
           }}
-        >
-          <span style={{ fontFamily: 'monospace', fontSize: 13, color: 'var(--text-faint)' }}>
-            {selectedWork.diagramLabel}
-          </span>
-        </div>
+        />
         <h3 style={{ fontSize: 26, fontWeight: 600, margin: '0 0 8px' }}>{selectedWork.title}</h3>
         <p style={{ fontSize: 15, color: 'var(--text-subtle)', margin: '0 0 16px' }}>
           {selectedWork.subtitle}

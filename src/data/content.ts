@@ -8,7 +8,7 @@ export const hero = {
 
 export const selectedWork = {
   title: "Bible Books Tracker",
-  diagramLabel: "bible-books-tracker — architecture diagram",
+  diagramLabel: "Bible Books Tracker — app screenshot",
   subtitle:
     "A simple way to track your reading progress through all 66 books of the Bible.",
   description:
