@@ -1,4 +1,5 @@
 import { experience, extracurriculars, type ExperienceEntry } from '../data/content';
+import { CalendarIcon, MapPinIcon } from './icons';
 
 const eyebrowStyle = {
   fontSize: 14,
@@ -14,9 +15,32 @@ function EntryList({ entries }: { entries: ExperienceEntry[] }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
       {entries.map((entry) => (
         <div key={`${entry.role}-${entry.org}`}>
-          <p style={{ fontWeight: 600, fontSize: 15, margin: 0 }}>{entry.role}</p>
-          <p style={{ fontSize: 14, color: 'var(--text-faint)', margin: '2px 0 0' }}>
-            {entry.org} · {entry.dates}
+          <p style={{ fontWeight: 600, fontSize: 15, margin: '0 0 4px' }}>{entry.role}</p>
+          <p
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              fontSize: 14,
+              color: 'var(--text-faint)',
+              margin: '0 0 2px',
+            }}
+          >
+            <MapPinIcon />
+            {entry.org}
+          </p>
+          <p
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 6,
+              fontSize: 14,
+              color: 'var(--text-faint)',
+              margin: 0,
+            }}
+          >
+            <CalendarIcon />
+            {entry.dates}
           </p>
         </div>
       ))}

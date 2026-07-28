@@ -58,6 +58,6 @@ export const extracurriculars: ExperienceEntry[] = [
 
 export const contact = {
   email: "terrancehuang@proton.me",
-  github: { label: "GitHub", url: "https://github.com/terrancekhuang" },
-  linkedin: { label: "LinkedIn", url: "https://linkedin.com/in/terrancehuang" },
+  github: { url: "https://github.com/terrancekhuang" },
+  linkedin: { url: "https://linkedin.com/in/terrancehuang" },
 };

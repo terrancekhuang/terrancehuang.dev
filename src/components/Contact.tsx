@@ -1,4 +1,5 @@
 import { contact } from '../data/content';
+import { GithubIcon, LinkedinIcon, MailIcon } from './icons';
 
 function Contact() {
   return (
@@ -15,21 +16,34 @@ function Contact() {
       >
         Contact
       </h2>
-      <p style={{ fontSize: 26, fontWeight: 600, margin: '0 0 20px' }}>
-        <a href={`mailto:${contact.email}`} style={{ color: 'var(--accent)' }}>
+      <p
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 10,
+          fontSize: 26,
+          fontWeight: 600,
+          margin: '0 0 20px',
+        }}
+      >
+        <a
+          href={`mailto:${contact.email}`}
+          style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--accent)' }}
+        >
+          <MailIcon size={24} />
           {contact.email}
         </a>
       </p>
-      <div style={{ display: 'flex', gap: 20, fontSize: 15, fontWeight: 500 }}>
+      <div style={{ display: 'flex', gap: 20 }}>
         <a href={contact.github.url} aria-label="GitHub profile" style={{ color: 'var(--accent)' }}>
-          {contact.github.label}
+          <GithubIcon size={24} />
         </a>
         <a
           href={contact.linkedin.url}
           aria-label="LinkedIn profile"
           style={{ color: 'var(--accent)' }}
         >
-          {contact.linkedin.label}
+          <LinkedinIcon size={24} />
         </a>
       </div>
     </section>
