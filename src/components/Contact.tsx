@@ -1,12 +1,7 @@
 import { contact } from '../data/content';
-import { GithubIcon, LinkedinIcon, MailIcon } from './icons';
+import { GithubIcon, MailIcon } from './icons';
 import Eyebrow from './Eyebrow';
 import Section from './Section';
-
-const socialLinks = [
-  { href: contact.github, label: 'GitHub profile', Icon: GithubIcon },
-  { href: contact.linkedin, label: 'LinkedIn profile', Icon: LinkedinIcon },
-];
 
 function Contact() {
   return (
@@ -22,12 +17,13 @@ function Contact() {
           {contact.email}
         </a>
       </p>
-      <div style={{ display: 'flex', gap: 20 }}>
-        {socialLinks.map(({ href, label, Icon }) => (
-          <a key={label} href={href} aria-label={label} className="link-accent">
-            <Icon size={24} />
-          </a>
-        ))}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+        <a href={contact.github} aria-label="GitHub profile" className="link-accent">
+          <GithubIcon size={24} />
+        </a>
+        <a href={contact.linkedin} aria-label="LinkedIn profile">
+          <img src={contact.linkedinBadgeSrc} alt="LinkedIn" height={24} />
+        </a>
       </div>
     </Section>
   );

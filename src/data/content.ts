@@ -64,4 +64,5 @@ export const contact = {
   email: "terrancehuang@proton.me",
   github: "https://github.com/terrancekhuang",
   linkedin: "https://linkedin.com/in/terrancehuang",
+  linkedinBadgeSrc: "/images/linkedin-badge.png",
 };

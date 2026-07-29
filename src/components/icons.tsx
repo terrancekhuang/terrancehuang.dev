@@ -44,11 +44,3 @@ export function GithubIcon({ size = 20 }: IconProps) {
     </svg>
   );
 }
-
-export function LinkedinIcon({ size = 20 }: IconProps) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.98 9.5h4v11h-4v-11ZM10.98 9.5h3.83v1.5h.05c.53-1 1.85-2.06 3.8-2.06 4.06 0 4.81 2.67 4.81 6.14v5.42h-4v-5.69c0-1.36-.02-3.1-1.89-3.1-1.9 0-2.19 1.48-2.19 3v5.79h-4v-11Z" />
-    </svg>
-  );
-}
