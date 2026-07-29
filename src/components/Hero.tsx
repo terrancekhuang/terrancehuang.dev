@@ -1,10 +1,18 @@
 import { hero } from '../data/content';
+import Section from './Section';
+import FramedImage from './FramedImage';
+
+const ctaButtonStyle = {
+  padding: '12px 22px',
+  borderRadius: 4,
+  fontWeight: 500,
+  fontSize: 15,
+};
 
 function Hero() {
   return (
-    <section
+    <Section
       id="top"
-      className="section-pad"
       style={{
         minHeight: '72vh',
         display: 'flex',
@@ -52,47 +60,32 @@ function Hero() {
             <div className="hero-actions" style={{ display: 'flex', gap: 12 }}>
               <a
                 href="#work"
-                style={{
-                  background: 'var(--text)',
-                  color: 'var(--bg)',
-                  padding: '12px 22px',
-                  borderRadius: 4,
-                  fontWeight: 500,
-                  fontSize: 15,
-                }}
+                style={{ ...ctaButtonStyle, background: 'var(--text)', color: 'var(--bg)' }}
               >
                 View work
               </a>
               <a
                 href="#contact"
                 style={{
+                  ...ctaButtonStyle,
                   border: '1px solid var(--border)',
                   color: 'var(--text)',
-                  padding: '12px 22px',
-                  borderRadius: 4,
-                  fontWeight: 500,
-                  fontSize: 15,
                 }}
               >
                 Contact
               </a>
             </div>
           </div>
-          <img
-            src="/images/terrance-portrait.jpg"
+          <FramedImage
+            src={hero.portraitSrc}
             alt={hero.name}
             className="hero-portrait"
-            style={{
-              width: '100%',
-              aspectRatio: '720 / 600',
-              objectFit: 'cover',
-              borderRadius: 8,
-              border: '1px solid var(--border)',
-            }}
+            aspectRatio={hero.portraitAspectRatio}
+            borderRadius={8}
           />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

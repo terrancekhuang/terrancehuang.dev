@@ -1,52 +1,35 @@
 import { contact } from '../data/content';
 import { GithubIcon, LinkedinIcon, MailIcon } from './icons';
+import Eyebrow from './Eyebrow';
+import Section from './Section';
+
+const socialLinks = [
+  { href: contact.github, label: 'GitHub profile', Icon: GithubIcon },
+  { href: contact.linkedin, label: 'LinkedIn profile', Icon: LinkedinIcon },
+];
 
 function Contact() {
   return (
-    <section id="contact" className="section-pad" style={{ padding: '56px 0 100px' }}>
-      <h2
-        style={{
-          fontSize: 14,
-          fontWeight: 600,
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-          color: 'var(--text-faint)',
-          margin: '0 0 20px',
-        }}
-      >
-        Contact
-      </h2>
-      <p
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-          fontSize: 26,
-          fontWeight: 600,
-          margin: '0 0 20px',
-        }}
-      >
+    <Section id="contact" style={{ padding: '56px 0 100px' }}>
+      <Eyebrow marginBottom={20}>Contact</Eyebrow>
+      <p style={{ fontSize: 26, fontWeight: 600, margin: '0 0 20px' }}>
         <a
           href={`mailto:${contact.email}`}
-          style={{ display: 'flex', alignItems: 'center', gap: 10, color: 'var(--accent)' }}
+          className="link-accent"
+          style={{ display: 'flex', alignItems: 'center', gap: 10 }}
         >
           <MailIcon size={24} />
           {contact.email}
         </a>
       </p>
       <div style={{ display: 'flex', gap: 20 }}>
-        <a href={contact.github.url} aria-label="GitHub profile" style={{ color: 'var(--accent)' }}>
-          <GithubIcon size={24} />
-        </a>
-        <a
-          href={contact.linkedin.url}
-          aria-label="LinkedIn profile"
-          style={{ color: 'var(--accent)' }}
-        >
-          <LinkedinIcon size={24} />
-        </a>
+        {socialLinks.map(({ href, label, Icon }) => (
+          <a key={label} href={href} aria-label={label} className="link-accent">
+            <Icon size={24} />
+          </a>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
 

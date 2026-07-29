@@ -1,5 +1,7 @@
 export const hero = {
   name: "Terrance Huang",
+  portraitSrc: "/images/terrance-portrait.jpg",
+  portraitAspectRatio: "720 / 600",
   bioParagraphs: [
     "I'm a full-stack software engineer at Citco, and I’ve always been the kind of person who loves tinkering and figuring out how things work. The best part of the job is when that curiosity turns into something that actually helps someone else.",
     "Outside of work you’ll usually find me at the gym, out on a weekend hike with a camera, or just hanging out with friends.",
@@ -8,6 +10,8 @@ export const hero = {
 
 export const selectedWork = {
   title: "Bible Books Tracker",
+  imageSrc: "/images/bible-tracker-demo.jpg",
+  imageAspectRatio: "1280 / 800",
   diagramLabel: "Bible Books Tracker — app screenshot",
   subtitle:
     "A simple way to track your reading progress through all 66 books of the Bible.",
@@ -58,6 +62,6 @@ export const extracurriculars: ExperienceEntry[] = [
 
 export const contact = {
   email: "terrancehuang@proton.me",
-  github: { url: "https://github.com/terrancekhuang" },
-  linkedin: { url: "https://linkedin.com/in/terrancehuang" },
+  github: "https://github.com/terrancekhuang",
+  linkedin: "https://linkedin.com/in/terrancehuang",
 };

@@ -1,14 +1,26 @@
+import type { ReactNode } from 'react';
 import { experience, extracurriculars, type ExperienceEntry } from '../data/content';
 import { CalendarIcon, MapPinIcon } from './icons';
+import Eyebrow from './Eyebrow';
+import Section from './Section';
 
-const eyebrowStyle = {
-  fontSize: 14,
-  fontWeight: 600,
-  textTransform: 'uppercase' as const,
-  letterSpacing: '0.08em',
-  color: 'var(--text-faint)',
-  margin: '0 0 24px',
-};
+function MetaRow({ icon, marginBottom = 0, children }: { icon: ReactNode; marginBottom?: number; children: ReactNode }) {
+  return (
+    <p
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        fontSize: 14,
+        color: 'var(--text-faint)',
+        margin: `0 0 ${marginBottom}px`,
+      }}
+    >
+      {icon}
+      {children}
+    </p>
+  );
+}
 
 function EntryList({ entries }: { entries: ExperienceEntry[] }) {
   return (
@@ -16,32 +28,10 @@ function EntryList({ entries }: { entries: ExperienceEntry[] }) {
       {entries.map((entry) => (
         <div key={`${entry.role}-${entry.org}`}>
           <p style={{ fontWeight: 600, fontSize: 15, margin: '0 0 4px' }}>{entry.role}</p>
-          <p
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 6,
-              fontSize: 14,
-              color: 'var(--text-faint)',
-              margin: '0 0 2px',
-            }}
-          >
-            <MapPinIcon />
+          <MetaRow icon={<MapPinIcon />} marginBottom={2}>
             {entry.org}
-          </p>
-          <p
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 6,
-              fontSize: 14,
-              color: 'var(--text-faint)',
-              margin: 0,
-            }}
-          >
-            <CalendarIcon />
-            {entry.dates}
-          </p>
+          </MetaRow>
+          <MetaRow icon={<CalendarIcon />}>{entry.dates}</MetaRow>
         </div>
       ))}
     </div>
@@ -50,21 +40,21 @@ function EntryList({ entries }: { entries: ExperienceEntry[] }) {
 
 function Experience() {
   return (
-    <section id="experience" className="section-pad" style={{ padding: '48px 0' }}>
+    <Section id="experience" style={{ padding: '48px 0' }}>
       <div
         className="cols-row"
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56 }}
       >
         <div>
-          <h2 style={eyebrowStyle}>Experience</h2>
+          <Eyebrow>Experience</Eyebrow>
           <EntryList entries={experience} />
         </div>
         <div>
-          <h2 style={eyebrowStyle}>Extracurriculars</h2>
+          <Eyebrow>Extracurriculars</Eyebrow>
           <EntryList entries={extracurriculars} />
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
