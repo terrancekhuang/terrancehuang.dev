@@ -1,0 +1,38 @@
+# Reference nginx config for terrancehuang.dev.
+# Deployed at /srv/apps/terrancehuang.dev/nginx/terrancehuang.conf on the VPS,
+# symlinked into /etc/nginx/sites-enabled/. TLS block below was added by
+# `certbot --nginx -d terrancehuang.dev -d www.terrancehuang.dev`.
+
+server {
+    server_name terrancehuang.dev www.terrancehuang.dev;
+
+    root /srv/apps/terrancehuang.dev/dist;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    gzip on;
+    gzip_types text/css application/javascript image/svg+xml;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/terrancehuang.dev/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/terrancehuang.dev/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = www.terrancehuang.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = terrancehuang.dev) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name terrancehuang.dev www.terrancehuang.dev;
+    return 404; # managed by Certbot
+}
