@@ -36,7 +36,7 @@ export const experience: ExperienceEntry[] = [
     dates: "August 2026 – Present",
   },
   {
-    role: "Software Engineering, Co-op",
+    role: "Software Engineer, Co-op",
     org: "ElevatEd School",
     dates: "January 2025 – August 2025",
   },
