@@ -51,7 +51,7 @@ export const extracurriculars: ExperienceEntry[] = [
   },
   {
     role: "President",
-    org: "Brothers and Sisters in Christ (BASIC) at RIT",
+    org: "Brothers and Sisters in Christ (BASIC) at Rochester Institute of Technology",
     dates: "January 2026 – May 2026",
   },
 ];
