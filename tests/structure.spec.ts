@@ -44,26 +44,28 @@ test.describe('page structure', () => {
     await expect(projectCards).toHaveCount(1);
   });
 
-  test('experience and extracurriculars render as two side-by-side columns on desktop', async ({
+  test('work and extracurriculars render as two side-by-side columns on desktop', async ({
     page,
   }) => {
     await page.goto('/');
 
-    const experienceHeading = page.getByRole('heading', { name: /^experience$/i });
+    const experienceSectionHeading = page.getByRole('heading', { name: /^experience$/i });
+    const workHeading = page.getByRole('heading', { name: /^work$/i });
     const extracurricularsHeading = page.getByRole('heading', { name: /extracurriculars/i });
 
-    await expect(experienceHeading).toBeVisible();
+    await expect(experienceSectionHeading).toBeVisible();
+    await expect(workHeading).toBeVisible();
     await expect(extracurricularsHeading).toBeVisible();
 
-    const expBox = await experienceHeading.boundingBox();
+    const workBox = await workHeading.boundingBox();
     const extraBox = await extracurricularsHeading.boundingBox();
 
-    expect(expBox).not.toBeNull();
+    expect(workBox).not.toBeNull();
     expect(extraBox).not.toBeNull();
 
-    // Side-by-side columns: roughly aligned vertically, Experience to the left.
-    expect(Math.abs(expBox!.y - extraBox!.y)).toBeLessThan(10);
-    expect(expBox!.x).toBeLessThan(extraBox!.x);
+    // Side-by-side columns: roughly aligned vertically, Work to the left.
+    expect(Math.abs(workBox!.y - extraBox!.y)).toBeLessThan(10);
+    expect(workBox!.x).toBeLessThan(extraBox!.x);
   });
 
   test('no "download resume" link or button exists anywhere on the page', async ({ page }) => {

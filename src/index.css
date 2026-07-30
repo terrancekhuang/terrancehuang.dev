@@ -1,5 +1,9 @@
 :root {
-  --accent: oklch(0.55 0.18 250);
+  --font-display: 'IBM Plex Sans Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --accent: oklch(0.52 0.16 230);
   --text: oklch(0.2 0.01 250);
   --text-muted: oklch(0.35 0.01 250);
   --text-subtle: oklch(0.4 0.01 250);
@@ -14,8 +18,10 @@
 
 body {
   margin: 0;
-  background: var(--bg);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+  font-family: var(--font-body);
   color: var(--text);
 }
 
@@ -37,6 +43,28 @@ main {
   padding: 0 24px;
   color: var(--text);
   overflow-wrap: break-word;
+}
+
+.section-divider {
+  border-top: 1px solid var(--border);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 640px) {

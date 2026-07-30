@@ -11,7 +11,8 @@ function MetaRow({ icon, marginBottom = 0, children }: { icon: ReactNode; margin
         display: 'flex',
         alignItems: 'center',
         gap: 6,
-        fontSize: 14,
+        fontFamily: 'var(--font-mono)',
+        fontSize: 13,
         color: 'var(--text-faint)',
         margin: `0 0 ${marginBottom}px`,
       }}
@@ -19,6 +20,24 @@ function MetaRow({ icon, marginBottom = 0, children }: { icon: ReactNode; margin
       {icon}
       {children}
     </p>
+  );
+}
+
+function ColumnLabel({ children }: { children: ReactNode }) {
+  return (
+    <h3
+      style={{
+        fontFamily: 'var(--font-mono)',
+        fontSize: 13,
+        fontWeight: 500,
+        textTransform: 'uppercase',
+        letterSpacing: '0.06em',
+        color: 'var(--text-faint)',
+        margin: '0 0 24px',
+      }}
+    >
+      {children}
+    </h3>
   );
 }
 
@@ -40,17 +59,20 @@ function EntryList({ entries }: { entries: ExperienceEntry[] }) {
 
 function Experience() {
   return (
-    <Section id="experience" style={{ padding: '48px 0' }}>
+    <Section id="experience" divider reveal style={{ padding: '48px 0' }}>
+      <Eyebrow index="02" marginBottom={28}>
+        Experience
+      </Eyebrow>
       <div
         className="cols-row"
         style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 56 }}
       >
         <div>
-          <Eyebrow>Experience</Eyebrow>
+          <ColumnLabel>Work</ColumnLabel>
           <EntryList entries={experience} />
         </div>
         <div>
-          <Eyebrow>Extracurriculars</Eyebrow>
+          <ColumnLabel>Extracurriculars</ColumnLabel>
           <EntryList entries={extracurriculars} />
         </div>
       </div>

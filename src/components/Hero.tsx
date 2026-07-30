@@ -24,11 +24,12 @@ function Hero() {
         <h1
           className="hero-title"
           style={{
+            fontFamily: 'var(--font-display)',
             fontSize: 88,
             lineHeight: 1,
             fontWeight: 600,
             margin: '0 0 24px',
-            letterSpacing: '-0.03em',
+            letterSpacing: '-0.01em',
           }}
         >
           {hero.name}

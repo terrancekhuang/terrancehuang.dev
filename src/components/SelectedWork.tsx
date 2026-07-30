@@ -5,8 +5,8 @@ import FramedImage from './FramedImage';
 
 function SelectedWork() {
   return (
-    <Section id="work" style={{ padding: '48px 0 64px' }}>
-      <Eyebrow marginBottom={28}>Selected work</Eyebrow>
+    <Section id="work" divider reveal style={{ padding: '48px 0 64px' }}>
+      <Eyebrow index="01" marginBottom={28}>Selected work</Eyebrow>
       <article>
         <FramedImage
           src={selectedWork.imageSrc}

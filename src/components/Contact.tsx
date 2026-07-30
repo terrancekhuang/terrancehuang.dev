@@ -5,8 +5,8 @@ import Section from './Section';
 
 function Contact() {
   return (
-    <Section id="contact" style={{ padding: '56px 0 100px' }}>
-      <Eyebrow marginBottom={20}>Contact</Eyebrow>
+    <Section id="contact" divider reveal style={{ padding: '56px 0 100px' }}>
+      <Eyebrow index="03" marginBottom={20}>Contact</Eyebrow>
       <p style={{ fontSize: 26, fontWeight: 600, margin: '0 0 20px' }}>
         <a
           href={`mailto:${contact.email}`}
