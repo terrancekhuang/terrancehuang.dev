@@ -1,92 +1,53 @@
 import { hero } from '../data/content';
-import Section from './Section';
-import FramedImage from './FramedImage';
-
-const ctaButtonStyle = {
-  padding: '12px 22px',
-  borderRadius: 4,
-  fontWeight: 500,
-  fontSize: 15,
-};
 
 function Hero() {
   return (
-    <Section
-      id="top"
-      style={{
-        minHeight: '72vh',
-        display: 'flex',
-        alignItems: 'center',
-        padding: '40px 0',
-      }}
-    >
-      <div style={{ width: '100%' }}>
-        <h1
-          className="hero-title"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 88,
-            lineHeight: 1,
-            fontWeight: 600,
-            margin: '0 0 24px',
-            letterSpacing: '-0.01em',
-          }}
-        >
-          {hero.name}
-        </h1>
-        <div
-          className="hero-row"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 340px',
-            gap: 40,
-            alignItems: 'start',
-          }}
-        >
+    <header className="hero band-blue" id="top">
+      <div className="wrap">
+        <div className="topbar">
+          <span>terrancehuang.dev</span>
+          <span>2026</span>
+        </div>
+        <div className="rule topbar-rule is-drawn" />
+        <div className="hero-main">
           <div>
-            {hero.bioParagraphs.map((paragraph, i) => (
-              <p
-                key={paragraph}
-                style={{
-                  fontSize: 19,
-                  lineHeight: 1.6,
-                  color: 'var(--text-muted)',
-                  margin: i === hero.bioParagraphs.length - 1 ? '0 0 32px' : '0 0 16px',
-                  maxWidth: 580,
-                }}
-              >
-                {paragraph}
-              </p>
-            ))}
-            <div className="hero-actions" style={{ display: 'flex', gap: 12 }}>
-              <a
-                href="#work"
-                style={{ ...ctaButtonStyle, background: 'var(--text)', color: 'var(--bg)' }}
-              >
+            <h1 className="hero-name">
+              Terrance
+              <br />
+              Huang
+            </h1>
+            <p className="hero-role">
+              {hero.role}
+              <br />
+              {hero.org}
+            </p>
+            <div className="hero-bio">
+              {hero.bioParagraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+            <div className="actions">
+              <a className="btn btn-fill" href="#work">
                 View work
               </a>
-              <a
-                href="#contact"
-                style={{
-                  ...ctaButtonStyle,
-                  border: '1px solid var(--border)',
-                  color: 'var(--text)',
-                }}
-              >
+              <a className="btn btn-ghost" href="#contact">
                 Contact
               </a>
             </div>
           </div>
-          <FramedImage
-            src={hero.portraitSrc}
-            alt={hero.name}
-            className="hero-portrait"
-            aspectRatio={hero.portraitAspectRatio}
-            borderRadius={8}
-          />
+          <figure className="plate">
+            <img
+              src={hero.portraitSrc}
+              alt={hero.name}
+              width={720}
+              height={600}
+              style={{ aspectRatio: hero.portraitAspectRatio, objectFit: 'cover' }}
+            />
+            <figcaption>{hero.name}</figcaption>
+          </figure>
         </div>
       </div>
-    </Section>
+    </header>
   );
 }
 

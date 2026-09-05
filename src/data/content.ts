@@ -1,5 +1,7 @@
 export const hero = {
   name: "Terrance Huang",
+  role: "Full-stack software engineer",
+  org: "Citco Fund Services (USA) Inc.",
   portraitSrc: "/images/terrance-portrait.jpg",
   portraitAspectRatio: "720 / 600",
   bioParagraphs: [

@@ -5,12 +5,20 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <main>
-      <Hero />
-      <SelectedWork />
-      <Experience />
-      <Contact />
-    </main>
+    <>
+      <main>
+        <Hero />
+        <SelectedWork />
+        <Experience />
+        <Contact />
+      </main>
+      <footer className="footer band-coal">
+        <div className="wrap">
+          <span>Terrance Huang</span>
+          <span>terrancehuang.dev</span>
+        </div>
+      </footer>
+    </>
   );
 }
 
