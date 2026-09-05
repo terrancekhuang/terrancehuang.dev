@@ -272,11 +272,12 @@ a {
 
 /* ---------------------------------------------------------------- work --- */
 
-.work {
+.work-shots {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: clamp(28px, 4.5vw, 60px);
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2.5vw, 24px);
   align-items: start;
+  margin-bottom: clamp(28px, 4.5vw, 44px);
 }
 
 .shot {
@@ -287,6 +288,11 @@ a {
 .shot img {
   width: 100%;
   height: auto;
+  display: block;
+}
+
+.work-body {
+  max-width: 68ch;
 }
 
 .work h3 {
@@ -543,10 +549,6 @@ a {
   .plate {
     max-width: 360px;
   }
-  .work {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
   .groups {
     grid-template-columns: 1fr;
     gap: 44px;
@@ -560,6 +562,9 @@ a {
   .btn {
     flex: 1;
     text-align: center;
+  }
+  .work-shots {
+    grid-template-columns: 1fr;
   }
   .entry {
     grid-template-columns: 1fr;

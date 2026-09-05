@@ -8,16 +8,14 @@ function SelectedWork() {
     <Section id="work" band="sheet">
       <SectionHead>Selected work</SectionHead>
       <article className="work">
-        <figure className="shot">
-          <img
-            src={selectedWork.imageSrc}
-            alt={selectedWork.diagramLabel}
-            width={1280}
-            height={800}
-            style={{ aspectRatio: selectedWork.imageAspectRatio }}
-          />
-        </figure>
-        <div>
+        <div className="work-shots">
+          {selectedWork.images.map((image) => (
+            <figure className="shot" key={image.src}>
+              <img src={image.src} alt={image.alt} style={{ aspectRatio: image.aspectRatio }} />
+            </figure>
+          ))}
+        </div>
+        <div className="work-body">
           <h3>{selectedWork.title}</h3>
           <p className="work-sub">{selectedWork.subtitle}</p>
           <p className="work-desc">{selectedWork.description}</p>

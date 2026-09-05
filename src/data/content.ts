@@ -12,9 +12,18 @@ export const hero = {
 
 export const selectedWork = {
   title: "Bible Books Tracker",
-  imageSrc: "/images/bible-tracker-demo.jpg",
-  imageAspectRatio: "1280 / 800",
-  diagramLabel: "Bible Books Tracker — app screenshot",
+  images: [
+    {
+      src: "/images/bible-tracker-dashboard.jpg",
+      alt: "Bible Books Tracker — dashboard",
+      aspectRatio: "1200 / 815",
+    },
+    {
+      src: "/images/bible-tracker-tracker.jpg",
+      alt: "Bible Books Tracker — tracker",
+      aspectRatio: "1200 / 1095",
+    },
+  ],
   subtitle:
     "A simple way to track your reading progress through all 66 books of the Bible.",
   description:
