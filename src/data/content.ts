@@ -1,7 +1,7 @@
 export const hero = {
   name: "Terrance Huang",
   role: "Full-stack software engineer",
-  org: "Citco Fund Services (USA) Inc.",
+  org: "The Citco Group Limited",
   portraitSrc: "/images/terrance-portrait.jpg",
   portraitAspectRatio: "720 / 600",
   bioParagraphs: [
@@ -43,7 +43,7 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     role: "Full Stack Engineer",
-    org: "Citco Fund Services (USA) Inc.",
+    org: "The Citco Group Limited",
     dates: "August 2026 – Present",
   },
   {
@@ -53,7 +53,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     role: "Software Engineer, Co-op",
-    org: "Citco Fund Services (USA) Inc.",
+    org: "The Citco Group Limited",
     dates: "June 2024 – August 2024",
   },
 ];
