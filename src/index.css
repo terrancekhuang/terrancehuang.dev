@@ -475,6 +475,22 @@ a {
   flex: none;
 }
 
+.pgp {
+  margin-top: 20px;
+  color: var(--coal);
+}
+.pgp a {
+  color: inherit;
+  font-weight: 600;
+  margin-right: 8px;
+}
+.pgp code {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 .socials {
   display: flex;
   align-items: center;

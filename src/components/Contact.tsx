@@ -11,6 +11,12 @@ function Contact() {
         <MailIcon />
         {contact.email}
       </a>
+      <p className="pgp">
+        <a href={contact.pgpKeySrc} download>
+          PGP key
+        </a>{' '}
+        <code>{contact.pgpFingerprint}</code>
+      </p>
       <div className="socials">
         <a href={contact.github} aria-label="GitHub profile">
           <GithubIcon />

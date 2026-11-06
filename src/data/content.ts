@@ -76,4 +76,6 @@ export const contact = {
   github: "https://github.com/terrancekhuang",
   linkedin: "https://linkedin.com/in/terrancehuang",
   linkedinBadgeSrc: "/images/linkedin-badge.png",
+  pgpKeySrc: "/pgp.asc",
+  pgpFingerprint: "2F4E A234 06E7 5E5B D51D  0D36 6FA9 5BEA C10C 242B",
 };
