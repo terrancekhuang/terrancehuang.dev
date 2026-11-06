@@ -88,6 +88,10 @@ a {
   background: var(--yellow);
   color: var(--coal);
 }
+.band-yellow ::selection {
+  background: var(--coal);
+  color: var(--yellow);
+}
 .band-coal {
   background: var(--coal);
   color: var(--chalk-3);
