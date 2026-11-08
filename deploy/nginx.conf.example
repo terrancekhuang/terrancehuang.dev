@@ -13,6 +13,12 @@ server {
         try_files $uri $uri/ =404;
     }
 
+    # Show the public key inline in the browser; same bytes for curl | gpg --import.
+    location = /pgp.asc {
+        default_type text/plain;
+        charset utf-8;
+    }
+
     gzip on;
     gzip_types text/css application/javascript image/svg+xml;
 

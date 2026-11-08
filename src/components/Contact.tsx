@@ -12,7 +12,7 @@ function Contact() {
         {contact.email}
       </a>
       <p className="pgp">
-        <a href={contact.pgpKeySrc} download>
+        <a href={contact.pgpKeySrc}>
           PGP key
         </a>{' '}
         <code>{contact.pgpFingerprint}</code>
