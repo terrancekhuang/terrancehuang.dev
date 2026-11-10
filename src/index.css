@@ -276,6 +276,12 @@ a {
 
 /* ---------------------------------------------------------------- work --- */
 
+.work + .work {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: clamp(40px, 6vw, 64px);
+  border-top: 3px solid var(--coal);
+}
+
 .work-shots {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -37,11 +37,11 @@ test.describe('page structure', () => {
     expect(heroFontSize).toBeGreaterThan(maxOtherFontSize);
   });
 
-  test('exactly one featured project section, not a multi-project grid', async ({ page }) => {
+  test('selected work lists all four projects', async ({ page }) => {
     await page.goto('/');
 
     const projectCards = page.locator('article');
-    await expect(projectCards).toHaveCount(1);
+    await expect(projectCards).toHaveCount(4);
   });
 
   test('work and extracurriculars render as two side-by-side columns on desktop', async ({

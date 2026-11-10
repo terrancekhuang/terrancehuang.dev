@@ -10,29 +10,68 @@ export const hero = {
   ],
 };
 
-export const selectedWork = {
-  title: "Bible Books Tracker",
-  images: [
-    {
-      src: "/images/bible-tracker-dashboard.jpg",
-      alt: "Bible Books Tracker — dashboard",
-      aspectRatio: "1200 / 815",
-    },
-    {
-      src: "/images/bible-tracker-tracker.jpg",
-      alt: "Bible Books Tracker — tracker",
-      aspectRatio: "1200 / 1095",
-    },
-  ],
-  subtitle:
-    "A simple way to track your reading progress through all 66 books of the Bible.",
-  description:
-    "A full-stack web app for logging chapters read and visualizing progress across the Old and New Testaments. Built with React and TypeScript on the frontend and a Node.js/Express API backed by PostgreSQL for persistence, deployed as a static build behind nginx on my own VPS.",
-  impact:
-    "Tracks reading progress across all 66 books, with per-book and per-testament completion views.",
-  liveDemoUrl: "https://bible.terrancehuang.dev",
-  githubUrl: "https://github.com/terrancekhuang/bible-books-tracker",
+export type WorkEntry = {
+  title: string;
+  images?: { src: string; alt: string; aspectRatio: string }[];
+  subtitle: string;
+  description: string;
+  impact: string;
+  liveDemoUrl?: string;
+  githubUrl?: string;
 };
+
+export const selectedWork: WorkEntry[] = [
+  {
+    title: "Bible Books Tracker",
+    images: [
+      {
+        src: "/images/bible-tracker-dashboard.jpg",
+        alt: "Bible Books Tracker — dashboard",
+        aspectRatio: "1200 / 815",
+      },
+      {
+        src: "/images/bible-tracker-tracker.jpg",
+        alt: "Bible Books Tracker — tracker",
+        aspectRatio: "1200 / 1095",
+      },
+    ],
+    subtitle:
+      "A simple way to track your reading progress through all 66 books of the Bible.",
+    description:
+      "A full-stack web app for logging chapters read and visualizing progress across the Old and New Testaments. Built with React and TypeScript on the frontend and a Node.js/Express API backed by PostgreSQL for persistence, deployed as a static build behind nginx on my own VPS.",
+    impact:
+      "Tracks reading progress across all 66 books, with per-book and per-testament completion views.",
+    liveDemoUrl: "https://bible.terrancehuang.dev",
+    githubUrl: "https://github.com/terrancekhuang/bible-books-tracker",
+  },
+  {
+    title: "Algorithmic Trading Strategy",
+    subtitle:
+      "A daily-rebalancing S&P 500 equity strategy with a protective SPY put hedge.",
+    description:
+      "A Python bot that scores every S&P 500 stock on fundamental quality and 12-month momentum, holds the top 10, and rolls an at-the-money SPY put to cushion market drawdowns. Factor weights come from a Random Forest, gradient boosting, and decision tree ensemble trained on quarterly fundamentals, and shift between value and growth regimes based on the 10-year Treasury yield. Orders execute through the Alpaca API.",
+    impact:
+      "10-year backtest: ~21% CAGR vs. ~15% for SPY, with a ~-25% max drawdown vs. ~-34%.",
+  },
+  {
+    title: "ESV Verse CLI",
+    subtitle: "Fetch ESV Bible passages without leaving the terminal.",
+    description:
+      "A Bash script built on curl and jq that pulls passages from the ESV API. References can be passed as arguments or piped in line by line, with configurable verse numbers, headings, footnotes, and line wrapping.",
+    impact: "Looks up multiple passages in one call, from arguments or stdin.",
+    githubUrl: "https://github.com/terrancekhuang/esv-cli",
+  },
+  {
+    title: "wheregoes",
+    subtitle:
+      "Trace a URL through every HTTP redirect to its final destination.",
+    description:
+      "A Go CLI that turns off the HTTP client's automatic redirect following and walks each 3xx response itself, printing every hop's status and destination. Colorized output that respects NO_COLOR, a verbose mode with per-hop timing, headers, and bodies, clipboard copy of the final URL, and distinct exit codes for scripting.",
+    impact:
+      "Shows the full redirect chain, hop count, and total time for any URL.",
+    githubUrl: "https://github.com/terrancekhuang/wheregoes-cli",
+  },
+];
 
 export type ExperienceEntry = {
   role: string;
