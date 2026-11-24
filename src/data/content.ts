@@ -45,6 +45,29 @@ export const selectedWork: WorkEntry[] = [
     githubUrl: "https://github.com/terrancekhuang/bible-books-tracker",
   },
   {
+    title: "Feeling Wheel",
+    images: [
+      {
+        src: "/images/feeling-wheel-wheel.jpg",
+        alt: "Feeling Wheel — the emotion wheel",
+        aspectRatio: "1200 / 860",
+      },
+      {
+        src: "/images/feeling-wheel-emotion.jpg",
+        alt: "Feeling Wheel — an emotion page",
+        aspectRatio: "1200 / 1100",
+      },
+    ],
+    subtitle:
+      "Name what you're feeling, then read what Scripture says to it.",
+    description:
+      "The Bible is full of ordinary people living through the whole range of human emotion. Scripture speaks to every one of those feelings, and in each, God is the answer. Feeling Wheel starts with a zoomable wheel of hard emotions. Each one opens verses that first sit with the feeling, then offer truth to hold, and end with a reflection, a prayer and a next step. It's a static React, TypeScript and D3 app that installs as a PWA and works offline. Every verse is checked word for word against the Berean Standard Bible at build time, and the app deploys to Cloudflare Pages.",
+    impact:
+      "145 hand-reviewed emotions and 652 verse cards, each emotion with its own shareable link.",
+    liveDemoUrl: "https://feeling-wheel.terrancehuang.dev",
+    githubUrl: "https://github.com/terrancekhuang/feeling-wheel",
+  },
+  {
     title: "Algorithmic Trading Strategy",
     subtitle:
       "A daily-rebalancing S&P 500 equity strategy with a protective SPY put hedge.",
